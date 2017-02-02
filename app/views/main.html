@@ -1,0 +1,27 @@
+<div class="main-container">
+
+  <ul class="nav main-tabs">
+    <li ui-sref-active="active">
+      <a ui-sref="main.profile" ng-bind="ui.profile"></a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="main.funds" ng-bind="ui.funds"></a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="main.followers" ng-bind="ui.followers"></a>
+    </li>
+    <li ui-sref-active="active">
+      <a ui-sref="main.subscription" ng-bind="ui.subscription"></a>
+    </li>
+
+    <div class="pull-right">
+      <a class="btn-logout" ng-bind="ui.logout" ng-show="isLogged" ng-click="logout()"></a>
+    </div>
+  </ul>
+
+  <div name="main-profile" ui-view></div>
+  <div name="main-funds" ui-view></div>
+  <div name="main-followers" ui-view></div>
+  <div name="main-subscription" ui-view></div>
+
+</div>

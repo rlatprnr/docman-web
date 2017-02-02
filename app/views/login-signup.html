@@ -1,0 +1,47 @@
+<form class="user-form" name="regForm" novalidate>
+
+  <h3 ng-bind="ui.new_register"></h3> 
+
+  <div class="form-item">
+    <label ng-bind="ui.username"></label>
+    <input type="text" name="username" ng-model="form.username" required>
+    <i ng-show="form.username_invalid" class="error fa fa-times-circle"></i>
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.email"></label>
+    <input type="email" name="email" ng-model="form.email" required>
+    <i ng-show="regForm.email.$dirty && regForm.email.$invalid" class="error fa fa-times-circle"></i>
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.password"></label>
+    <input type="password" name="password" ng-model="form.password" required>
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.repassword"></label>
+    <input type="password" name="repassword" ng-model="form.repassword" required>
+    <i ng-show="form.password != form.repassword" class="error fa fa-times-circle"></i>
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.address1"></label>
+    <input type="text" name="address1" ng-model="form.address1">
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.address2"></label>
+    <input type="text" name="address2" ng-model="form.address2">
+  </div>
+
+  <a class="btn btn-default btn-submit" ng-disabled="regForm.$invalid || form.password != form.repassword" ng-bind="ui.register" ng-click="signUp()"></a>
+
+  <div class="error error-msg" ng-bind="form.error"></div>
+
+  <h3 ng-bind="ui.business_account_login"></h3> 
+
+  <a class="btn btn-default btn-login" ui-sref="login.signin" ng-bind="ui.login"></a>  
+
+</form>
+ 

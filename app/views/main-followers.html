@@ -1,0 +1,54 @@
+<div class="followers-container">
+  <div class="title row">
+    <div class="col-xs-6">
+      <h1 ng-bind="ui.followers"></h1>  
+    </div>
+    <div class="col-xs-6">
+      <div class="search-bar">
+        <input type="text" name="" placeholder="{{ui.search_followers}}" ng-model="searchKey">
+        <i class="fa fa-search"></i>
+      </div>      
+      <a class="btn btn-default btn-invite" ng-bind="ui.invite_new_follower" ng-click="openPopup()"></a>
+    </div>
+  </div>
+
+  <div class="search-result">
+    <div class="row">
+      <div class="col-xs-5">
+        <input type="checkbox" ng-model="checkedAll" ng-change="checkFollowers()">
+        <label ng-bind="ui.email"></label>
+      </div>      
+      <label class="col-xs-2" ng-bind="ui.active_deactive"></label>
+      <label class="col-xs-2" ng-bind="ui.activities"></label>
+      <label class="col-xs-3" ng-bind="ui.inviited_date"></label>
+    </div>
+
+    <div class="row result-item" ng-repeat="item in followers | filter:{email:searchKey}">
+      <div class="col-xs-5 s-line">
+        <input type="checkbox" ng-model="item.checked">
+        <span ng-bind="item.email"></span>
+      </div>      
+      <div class="col-xs-2 s-line">{{item.active==0?'':(item.active==1?ui.active:ui.deactive)}}</div>
+      <div class="col-xs-2 s-line">{{item.activities==0?'':(item.activities==1?ui.following:ui.unfollowed)}}</div>
+      <div class="col-xs-3 s-line" ng-bind="item.date_label"></div>
+    </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<script type="text/ng-template" id="invite-dialog.html">
+  <div class="modal-header invite-header">
+    <h2 class="modal-title" ng-bind="ui.invite_new_follower"></h2>
+  </div>
+  <div class="modal-body invite-body">
+    <form>
+      <textarea placeholder="{{ui.email_list}}" rows="5" class="error1" ng-model="emails"></textarea>
+    </form>    
+  </div>
+  <div class="modal-footer invite-footer">
+    <a class="btn btn-default" ng-bind="ui.send" ng-click="ok()"></a>
+    <a class="btn btn-default" ng-bind="ui.cancel" ng-click="cancel()"></a>
+  </div>
+</script>

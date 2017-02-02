@@ -1,0 +1,38 @@
+<div class="row subscri-container">
+
+  <div class="col-md-6">
+    <div class="title">
+      <h1 ng-bind="ui.recent_subscription"></h1>
+    </div>
+    <div ng-bind="ui.you_dont_have_active_plan"></div>
+    <a class="btn btn-default btn-renew" ng-bind="ui.renew" ng-click=review()></a>
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="title">
+      <h1 ng-bind="ui.new_subscription"></h1>
+    </div>
+
+    <form name="forma" novalidate>
+
+      <select class="sel-subscri" ng-model="mplan">
+        <option value="" ng-bind="ui.please_select"></option>
+        <option value="6" ng-bind="ui.month6">6-month plan</option>
+        <option value="12" ng-bind="ui.month12">12-month plan</option>
+      </select>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="accept"><span ng-bind="ui.i_accept_terms_condition"></span>
+        </label>
+      </div>
+
+      <a class="btn btn-default btn-process" ng-disabled="!accept || mplan==''" ng-bind="ui.process" ng-click="process()"></a>
+
+      <div ng-bind="ui.page_will_be_directed">aa</div>
+
+    </form>
+
+  </div>
+</div>

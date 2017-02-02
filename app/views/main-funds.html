@@ -1,0 +1,267 @@
+<div class="funds-container">
+
+  <aside>
+    
+    <a class="btn btn-default btn-new-fund" ng-bind="ui.new_fund" ng-click="newFund()"></a>
+
+    <a class="link" ng-class="{'active':form.id==fund.id}" ng-click="selectFund(fund)" ng-repeat="fund in funds">
+      {{fund.full_name}}
+    </a>
+
+  </aside>
+
+  <div class="fund-detail-container">
+    <form name="fundForm" ng-show="form" novalidate>
+    <div class="row title">
+      <h3 ng-bind="ui.fund_detail"></h3>
+      <a class="btn btn-default btn-go-upload" ng-bind="ui.upload_new_document" ng-click="gotoNewDocument()"></a>
+      <a class="btn btn-default btn-remove" ng-bind="ui.remove" ng-click="removeFund()"></a>
+      <a class="btn btn-default btn-remove" ng-bind="ui.save" ng-click="saveFund()"></a>
+    </div>
+
+    <div class="input-list">
+      <div class="row form-item">
+        <label ng-bind="ui.fund_full_name"></label>
+        <input type="text" name="" ng-model="form.full_name">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.manager"></label>
+        <input type="text" name="" ng-model="form.manager">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.advisor"></label>
+        <input type="text" name="" ng-model="form.advisor">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.fund_strategy"></label>
+        <input type="text" name="" ng-model="form.fund_strategy">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.regulatory_registrations"></label>
+        <input type="text" name="" ng-model="form.regulatory_registrations">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.portpolio_manager"></label>
+        <input type="text" name="" ng-model="form.portpolio_manager">
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.biography"></label>
+        <textarea rows="2" ng-model="form.biography"></textarea>
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.coo"></label>
+        <input type="text" name="" ng-model="form.coo">
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-4 border-r">
+          <label ng-bind="ui.inception_date"></label>
+          <input type="text" id="datepicker1" readonly>
+        </div>
+        <div class="form-item col-xs-12 col-sm-4 border-r">
+          <label ng-bind="ui.aum"></label>
+          <input type="text" name="" ng-model="form.aum">
+        </div>
+        <div class="form-item  col-xs-12 col-sm-4">
+          <label ng-bind="ui.firm_aum"></label>
+          <input type="text" name="" ng-model="form.firm_aum">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.administrator"></label>
+          <input type="text" name="" ng-model="form.administrator">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.audior"></label>
+          <input type="text" name="" ng-model="form.auditor">
+        </div>
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.prime_broker"></label>
+        <input type="text" name="" ng-model="form.prime_broker">
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.onshore_regal_counsel"></label>
+          <input type="text" name="" ng-model="form.onshore_legal_counsel">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.offshore_regal_counsel"></label>
+          <input type="text" name="" ng-model="form.offshore_legal_counsel">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-4 border-r">
+          <label ng-bind="ui.subscriptions"></label>
+          <input type="text" name="" ng-model="form.subscriptions">
+        </div>
+        <div class="form-item col-xs-12 col-sm-4 border-r">
+          <label ng-bind="ui.redemption"></label>
+          <input type="text" name="" ng-model="form.redemption">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-4">
+          <label ng-bind="ui.notice_period"></label>
+          <input type="text" name="" ng-model="form.notice_period">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.lock_up"></label>
+          <input type="text" name="" ng-model="form.lock_up">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.penalty_fee"></label>
+          <input type="text" name="" ng-model="form.penalty_fee">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.gate_fund_level"></label>
+          <input type="text" name="" ng-model="form.fund_level">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.gate_investor_level"></label>
+          <input type="text" name="" ng-model="form.investor_level">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.minimum"></label>
+          <input type="text" name="" ng-model="form.minimum">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.management_fee"></label>
+          <input type="text" name="" ng-model="form.management_pee">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.performance_fee"></label>
+          <input type="text" name="" ng-model="form.performance_fee">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.hurdle_rate"></label>
+          <input type="text" name="" ng-model="form.hurdle_rate">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-6 border-r">
+          <label ng-bind="ui.loss_carry_forward"></label>
+          <input type="text" name="" ng-model="form.loss_carry_forward">
+        </div>
+
+        <div class="form-item col-xs-12 col-sm-6">
+          <label ng-bind="ui.high_water_mark"></label>
+          <input type="text" name="" ng-model="form.high_water_mark">
+        </div>
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.bloomberg_ticker"></label>
+        <input type="text" name="" ng-model="form.bloomberg_ticker">
+      </div>
+
+      <div class="row">
+        <div class="form-item col-xs-12 col-sm-3 border-r s-line">
+          <label ng-bind="ui.performance_date"></label>
+          <input type="text" id="datepicker2" readonly>
+        </div>
+        <div class="form-item col-xs-12 col-sm-3 border-r">
+          <label ng-bind="ui.mtd"></label>
+          <input type="text" name="" ng-model="form.mtd">
+        </div>
+        <div class="form-item col-xs-12 col-sm-3 border-r">
+          <label ng-bind="ui.ytd"></label>
+          <input type="text" name="" ng-model="form.ytd">
+        </div>
+        <div class="form-item col-xs-12 col-sm-3">
+          <label ng-bind="ui.avg"></label>
+          <input type="text" name="" ng-model="form.avg">
+        </div>
+      </div>
+
+      <div class="row form-item">
+        <label ng-bind="ui.strategy"></label>
+        <textarea rows="4" ng-model="form.strategy"></textarea>
+      </div>
+    </div>
+
+    <div class="row title">
+      <h3 ng-bind="ui.documents"></h3>
+      <a class="btn btn-default btn-publish pull-right" ng-click="publish_new()" ng-bind="ui.publish_add_new" ng-disabled="!filename"></a>
+    </div>
+
+    <div class="doc-list">
+      <div>
+        <div class="row">
+          <div class="col-xs-6 h-col" ng-bind="ui.file_name"></div>
+          <div class="col-xs-2 h-col" ng-bind="ui.publish_date"></div>
+          <div class="col-xs-2 h-col" ng-bind="ui.mthly_qtrly"></div>
+          <div class="col-xs-2 h-col" ng-bind="ui.un_publish"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="row new-col">
+          <div class="col-xs-6 c-col">
+            <div class="fileUpload btn btn-default btn-upload" id="new-document">
+              <span ng-bind="ui.upload_pdf"></span>
+              <input type="file" class="upload" accept="application/pdf"/>
+            </div>
+            {{filename}}
+          </div>
+          <div class="col-xs-2 c-col date-picker">
+            <input type="text" id="datepicker3-label" readonly>
+            <input type="text" id="datepicker3">
+          </div>
+          <div class="col-xs-2 c-col"> 
+            <select class="doc-add-mq" ng-model="mq">
+              <option ng-bind="ui.monthly" value="m"></option>
+              <option ng-bind="ui.quarterly" value="q"></option>
+            </select>
+          </div>
+          <div class="col-xs-2 c-col"></div>
+        </div> 
+      </div>
+
+      <div ng-repeat="item in form.docs">
+        <div class="row">
+          <div class="col-xs-6 c-col" ng-bind="item.filename"></div>
+          <div class="col-xs-2 c-col" ng-bind="item.date_label"></div>
+          <div class="col-xs-2 c-col" ng-bind="item.mq=='m'?ui.monthly:ui.quarterly"></div>
+          <div class="col-xs-2 c-col">
+            <a class="btn-doc-state-change" ng-click="changeDocState(item)">{{item.publish=='y'?ui.unpublish:ui.publish}}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </form>
+  </div>
+  
+</div>

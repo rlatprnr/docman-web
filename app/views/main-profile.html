@@ -1,0 +1,59 @@
+<div class="profile-container">
+
+  <h1 ng-bind="ui.profile"></h1>  
+
+  <form class="user-form" name="profileForm" novalidate>
+
+    <img class="logo" ng-click="browser()" border="0" ng-src="{{form.logo}}">
+    <input type="file" class="hide" id="logo-file" accept="image/*">
+
+    <div class="form-item comment" ng-bind="ui.type_here"></div>
+
+    <div class="form-item">
+      <label ng-bind="ui.username"></label>
+      <input type="text" name="username" ng-model="form.username" required>
+      <i ng-show="form.username_invalid" class="error fa fa-times-circle"></i>
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.email"></label>
+      <input type="email" name="email" ng-model="form.email" required>
+      <i ng-show="profileForm.email.$dirty && profileForm.email.$invalid" class="error fa fa-times-circle"></i>
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.password"></label>
+      <input type="password" name="password" ng-model="form.password" required>
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.repassword"></label>
+      <input type="password" name="repassword" ng-model="form.repassword" required>
+      <i ng-show="form.password != form.repassword" class="error fa fa-times-circle"></i>
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.contact_number"></label>
+      <input type="text" name="contact_number" ng-model="form.contact_number">
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.contact_person"></label>
+      <input type="text" name="contact_person" ng-model="form.contact_person">
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.address1"></label>
+      <input type="text" name="address1" ng-model="form.address1">
+    </div>
+
+    <div class="form-item">
+      <label ng-bind="ui.address2"></label>
+      <input type="text" name="address2" ng-model="form.address2">
+    </div>
+
+    <a class="btn btn-default btn-submit" ng-disabled="submitted || profileForm.$invalid || form.password != form.repassword" ng-bind="ui.update" ng-click="update()"></a>
+
+  </form>
+
+</div>

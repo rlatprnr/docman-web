@@ -1,0 +1,34 @@
+<form class="user-form" name="loginForm" novalidate>
+
+  <h3 ng-bind="ui.business_account_login"></h3>
+
+  <div class="form-item">
+    <label ng-bind="ui.username"></label>
+    <input type="text" name="username" ng-model="form.username" required>
+    <i ng-show="form.username_invalid" class="error fa fa-times-circle"></i>
+  </div>
+
+  <div class="form-item">
+    <label ng-bind="ui.password"></label>
+    <input type="password" name="password" ng-model="form.password" ng-keyup="checkEnter($event)" required>
+    <i ng-show="form.password_invalid" class="error fa fa-times-circle"></i>
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="remember"><span ng-bind="ui.remomber_me"></span>
+    </label>
+  </div>
+
+  <div>
+    <a class="link btn-forget" ui-sref="login.forget" ng-bind="ui.forget_password"></a>
+  </div>
+
+  <a class="btn btn-default btn-submit" ng-disabled="loginForm.$invalid" ng-bind="ui.login" ng-click="signIn()"></a>
+  <div class="error error-msg" ng-bind="form.error"></div>
+
+  <h3 ng-bind="ui.new_register"></h3>
+
+  <a class="btn btn-default btn-register" ui-sref="login.register" ng-bind="ui.register"></a>
+
+</form>

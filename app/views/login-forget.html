@@ -1,0 +1,29 @@
+<form class="user-form" name="forgetForm" novalidate>
+
+  <h3 ng-bind="ui.reset_password"></h3> 
+
+  <!-- <div ng-show="!sent_email">
+    <div class="form-item">
+      <label ng-bind="ui.email"></label>
+      <input type="email" name="email" ng-model="form.email" required>
+      <i ng-show="regForm.email.$dirty && regForm.email.$invalid" class="error fa fa-times-circle"></i>
+    </div>
+    
+    <a class="btn btn-default btn-submit" ng-disabled="forgetForm.$invalid" ng-bind="ui.retrieve_password" ng-click="retrievePassword()"></a>
+    
+  </div>
+  
+  <div class="reset_msg" ng-show="sent_email">
+
+    <h3 ng-bind="ui.reset_msg1"></h3>
+    <div ng-bind="ui.reset_msg2"></div>
+
+  </div> -->
+
+  <div class="error error-msg" ng-bind="form.error"></div>
+
+  <h3 ng-bind="ui.business_account_login"></h3> 
+
+  <a class="btn btn-default btn-login" ui-sref="login.signin" ng-bind="ui.login"></a>   
+
+</form>

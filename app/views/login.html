@@ -1,0 +1,31 @@
+<div class="login-container row">
+  
+  <div class="col-md-6">
+    <div class="title">
+      <h1 ng-bind="ui.app_title"></h1>
+      <p ng-bind="ui.app_subtitle"></p>  
+    </div>
+    
+    <div class="app-buttons row">
+      <div class="app-btn-item col-xs-6">
+        <div><img src="images/qr-code.jpg"></div>
+        <a href=""><img src="images/google-play.png"></a>  
+      </div>        
+      <div class="app-btn-item col-xs-6">
+        <div><img src="images/qr-code.jpg"></div>
+        <a href=""><img src="images/app-store.png"></a>
+      </div>
+    </div>    
+  </div>
+
+  <div class="col-md-6">
+    <div class="title">
+      <h1 ng-bind="ui.login_title"></h1>
+      <p ng-bind="ui.login_subtitle"></p>
+    </div>
+
+    <div ui-view></div>    
+    
+  </div>
+
+</div>
